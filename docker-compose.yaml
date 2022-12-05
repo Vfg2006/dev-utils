@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  dev-utils:
+    container_name: dev-utils
+    build: .
+    ports:
+      - "8000:8000"
+    networks:
+      - dev-utils-network
+    restart: unless-stopped
+
+networks:
+  dev-utils-network:
+    driver: bridge
